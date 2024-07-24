@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>payNow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">PayNow</div>
+      <div onclick="burgerIcon()" class="burger-icon" id="burger-icon">&#9776;</div>
+      <div onclick="closeIcon()" class="close-icon" id="close-icon">&times;</div>
+      <ul id="menu" class="nav-links">
+        <li><a  href="#home">Home</a></li>
+        <li><a  href="#transfer">Transfer Money</a></li>
+        <li><a  href="#features">Features</a></li>
+        <li><a  href="#testimonials">Testimonials</a></li>
+        <li><a  href="#contact">Contact Us</a></li>
+        
+      </ul>
+    </nav>
+    <div class="gradient-line"></div>
+  </header>
+  
+ <section id="home">
+    <div class="home-container">
+        <h1>Transfer Money 
+            <br/>in Seconds</h1>
+          <p>Experience the future of digital payments with our secure and user-friendly platform</p>
+          <button class="join-now">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Join Now</span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </section>
+     <section id="transfer">
+        <div class="transfer-container">
+            <h1>Convenient ways to <br/>transfer money</h1>
+            <div class="buttons">
+                <button id="sending" class="active" onclick="toggleButtons('sendMoney')">Send money</button>
+                <button id="receive" onclick="toggleButtons('receiveMoney')">Request money</button>
+            </div>
+            <div class="section active" id="send-money">
+                <div class="form">
+                    <h1>Send Money</h1>
+                    <div class="inputs">
+                      <div class="input-field">
+                        <label>Recipient's Name</label>
+                      <input id="sendRecipientName" type="text">
+                      <span id="sendRecipientNameError" class="error"></span>
+                      </div>
+                      <div class="input-field">
+                        <label>Account Number</label>
+                      <input id="sendAccountNumber" type="number">
+                      <span id="sendAccountNumberError" class="error"></span>
+                      </div>
+                      <div class="input-field">
+                        <label>Amount</label>
+                      <input id="sendAmount" type="number">
+                      <span id="sendAmountError" class="error"></span>
+                      </div>
+                      <button onclick="validateSendMoney()">Send Money</button>
+                    </div>
+              </div>
+              <div class="image1">
+                <img src="./assets/send.avif" alt="hello">
+              </div>
+                
+            </div>
+            <div class="section" id="receive-money">
+                <div class="form">
+                  <h1>Request Money</h1>
+                  <div class="inputs">
+                      <div class="input-field">
+                          <label>Recipient's Name</label>
+                          <input id="requestRecipientName" type="text">
+                          <span id="requestRecipientNameError" class="error"></span>
+                      </div>
+                      <div class="input-field">
+                          <label>Requested Amount</label>
+                          <input id="requestAmount" type="number">
+                          <span id="requestAmountError" class="error"></span>
+                      </div>
+                      <div class="input-field">
+                          <label>Phone Number or Email</label>
+                          <input id="requestContact" type="tel">
+                          <span id="requestContactError" class="error"></span>
+                      </div>
+                      <button onclick="validateRequestMoney()">Send Request</button>
+                </div>
+                
+            </div>
+            <div class="image1">
+              <img src="./assets/send.avif" alt="hello">
+            </div>
+        </div>
+  </section>
+  <section id="features">
+    <div class="features-container">
+      <h1>Features</h1>
+      <div class="feature-list">
+      <div class="feature-item">
+        <img src="./assets/instantPay.png">
+        <label>Instant Transfers</label>
+      </div>
+      <div class="feature-item">
+        <img src="./assets/secure.jpg">
+        <label>Secure Transactions</label> 
+      </div>  
+      <div class="feature-item">
+        <img src="./assets/customerSupport.jpg">
+        <label>24/7 Customer Support</label>
+      </div>  
+      <div class="feature-item">
+        <img src="./assets/low.jpg">
+        <label>Low Transaction Fees </label>
+      </div> 
+      <div class="feature-item">
+        <img src="./assets/report.png">
+        <label>Transaction Reports</label>
+      </div> 
+      <div class="feature-item">
+        <img src="./assets/authentication-secure.jpg">
+        <label>Transaction Authentication
+        </label>
+      </div>
+    </div>    
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="testimonials-container">
+      <h1>Testimonials</h1>
+      <div class="testimonials">
+        <h2>John Doe</h2>
+        <div>"Using this money transfer service has been a game changer for me. The process is quick, secure, and incredibly user-friendly. I can send money to my family overseas with just a few clicks. Highly recommend!"</div>
+      </div>
+      <div class="testimonials">
+        <h2>Michael Johnson</h2>
+        <div>"The intuitive interface and robust security features make me feel safe every time I make a transaction. I also love the notifications that keep me updated on the status of my transfers. Keep up the great work!"</div>
+      </div>
+      <button class="button">See More</button>
+      </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-container">
+      <h1>Contact Us</h1>
+      <div class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" placeholder="Your Name">
+          <span id="nameError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" placeholder="Your Email" type="email">
+          <span id="emailError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Your Message"></textarea>
+          <span id="messageError" class="error"></span>
+        </div>
+        <button class="button" onclick="Contact()" >Send</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="social-links">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+      <p>&copy; 2024 PayEasy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+  
+</body>
+</html>
